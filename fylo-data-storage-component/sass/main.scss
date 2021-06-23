@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+$primary-color: hsl(228, 56%, 26%);
+$secondary-color: hsl(229, 57%, 11%);
+$neutral-color-1: hsl(243, 100%, 93%);
+$neutral-color-2: hsl(229, 7%, 55%);
+@mixin mobile-only () {
+    @media screen and (max-width:1090px) {
+        @content;
+    }
+}
+
+body {
+    background: url("../../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: $secondary-color;
+    font-family: "Raleway", sans-serif;
+    color: $neutral-color-1;
+    font-size: 12px;
+    @include mobile-only() {
+        background: url("../../images/bg-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    height: 65vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    @include mobile-only() {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.left-block {
+    width: 20%;
+    background-color: $primary-color;
+    border-radius: 10px;
+    border-top-right-radius: 75px;
+    align-self: center;
+    // display: flex;
+    // flex-direction: column;
+    padding: 30px;
+    margin-right: 15px;
+    @include mobile-only() {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    &__logo {
+        width: 50%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    &__icons object {
+        padding: 10px;
+        margin-right: 12px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+        background-color: $secondary-color;
+    }
+    &__logo {
+        min-height: 40px;
+        width: auto;
+    }
+}
+
+.right-block {
+    width: 40%;
+    height: 60px;
+    align-self: center;
+    background-color: $primary-color;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    @include mobile-only() {
+        width: 100%;
+        margin-right: 0;
+        height: 80px;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    &__label {
+        position: absolute;
+        right: 30px;
+        top: -40px;
+        padding: 10px;
+        background-color: $neutral-color-1;
+        width: 150px;
+        height: 40px;
+        float: right;
+        color: $secondary-color;
+        font-size: 30px;
+        font-weight: 700;
+        border-radius: 10px;
+        text-align: center;
+        @include mobile-only() {
+            top: 100%;
+            right:50%;
+            transform:translate(50%,-50%);
+        }
+        span {
+            font-size: 12px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+        &:before {
+            border: 20px solid transparent;
+            border-bottom: 20px solid $neutral-color-1;
+            border-left: 20px solid $neutral-color-1;
+            content: "";
+            position: absolute;
+            right: -20px;
+            bottom: -10px;
+            transform: rotate(45deg);
+            @include mobile-only() {
+                border: none;
+                border-bottom: none;
+                border-left: none;
+            }
+        }
+    }
+    &__progress-bar {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        border-radius: 15px;
+        transform: scaleX(0);
+        transition: transform 400ms;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform-origin: left;
+        &--ball {
+            width: 13px;
+            height: 13px;
+            background-color: $neutral-color-1;
+            border-radius: 50%;
+            position: absolute;
+            top:1px;
+            transition: all 400ms;
+            right: 100%;
+            transform: translateX(15px);
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+    &__progress-bar-border {
+        width: 100%;
+        height: 15px;
+        background-color: $neutral-color-1;
+        border-radius: 15px;
+        margin-bottom: 5px;
+        border: 3px solid $secondary-color;
+        position: relative;
+        &:hover > .right-block__progress-bar {
+            transform: scaleX(0.815);
+        }
+        &:hover > .right-block__progress-bar--ball {
+            right: 18.5%;
+            transform: translateX(-1px);
+        }
+    }
+    &__limit-values {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center;
+    a {
+        color: hsl(228, 45%, 44%); 
+    }
+}
