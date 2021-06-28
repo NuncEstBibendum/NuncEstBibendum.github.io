@@ -9,7 +9,7 @@ $secondary-color: hsl(229, 57%, 11%);
 $neutral-color-1: hsl(243, 100%, 93%);
 $neutral-color-2: hsl(229, 7%, 55%);
 @mixin mobile-only () {
-    @media screen and (max-width:1090px) {
+    @media screen and (max-width:700px) {
         @content;
     }
 }
@@ -46,6 +46,7 @@ body {
 
 .left-block {
     width: 20%;
+    min-width: 200px;
     background-color: $primary-color;
     border-radius: 10px;
     border-top-right-radius: 75px;
@@ -56,6 +57,7 @@ body {
     margin-right: 15px;
     @include mobile-only() {
         width: 100%;
+        min-width: 0px;
         margin-right: 0;
         margin-bottom: 20px;
     }
@@ -64,12 +66,25 @@ body {
         height: auto;
         margin-bottom: 20px;
     }
-    &__icons object {
-        padding: 10px;
-        margin-right: 12px;
-        margin-bottom: 8px;
-        border-radius: 10px;
+    &__icons button {
+        border: none;
+        outline: none;
+        width: 50px;
+        height: 50px;
         background-color: $secondary-color;
+        border-radius: 10px;
+        margin-right: 1em;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__icons--document {
+        background-image: url("../../images/icon-document.svg");
+    }
+    &__icons--folder {
+        background-image: url("../../images/icon-folder.svg");
+    }
+    &__icons--upload {
+        background-image: url("../../images/icon-upload.svg");
     }
     &__logo {
         min-height: 40px;
@@ -79,6 +94,7 @@ body {
 
 .right-block {
     width: 40%;
+    min-width : 350px;
     height: 60px;
     align-self: center;
     background-color: $primary-color;
@@ -89,6 +105,7 @@ body {
         width: 100%;
         margin-right: 0;
         height: 80px;
+        min-width: 0px;
     }
     p {
         margin-bottom: 15px;

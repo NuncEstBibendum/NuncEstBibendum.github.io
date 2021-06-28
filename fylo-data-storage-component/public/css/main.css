@@ -14,7 +14,7 @@ body {
   font-size: 12px;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   body {
     background: url("../../images/bg-mobile.png");
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@ body {
   margin-bottom: 100px;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -52,6 +52,7 @@ body {
 
 .left-block {
   width: 20%;
+  min-width: 200px;
   background-color: #1d2c67;
   border-radius: 10px;
   border-top-right-radius: 75px;
@@ -62,9 +63,10 @@ body {
   margin-right: 15px;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   .left-block {
     width: 100%;
+    min-width: 0px;
     margin-right: 0;
     margin-bottom: 20px;
   }
@@ -76,12 +78,28 @@ body {
   margin-bottom: 20px;
 }
 
-.left-block__icons object {
-  padding: 10px;
-  margin-right: 12px;
-  margin-bottom: 8px;
-  border-radius: 10px;
+.left-block__icons button {
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
   background-color: #0c122c;
+  border-radius: 10px;
+  margin-right: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left-block__icons--document {
+  background-image: url("../../images/icon-document.svg");
+}
+
+.left-block__icons--folder {
+  background-image: url("../../images/icon-folder.svg");
+}
+
+.left-block__icons--upload {
+  background-image: url("../../images/icon-upload.svg");
 }
 
 .left-block__logo {
@@ -91,6 +109,7 @@ body {
 
 .right-block {
   width: 40%;
+  min-width: 350px;
   height: 60px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -101,11 +120,12 @@ body {
   position: relative;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   .right-block {
     width: 100%;
     margin-right: 0;
     height: 80px;
+    min-width: 0px;
   }
 }
 
@@ -129,7 +149,7 @@ body {
   text-align: center;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   .right-block__label {
     top: 100%;
     right: 50%;
@@ -156,7 +176,7 @@ body {
           transform: rotate(45deg);
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 700px) {
   .right-block__label:before {
     border: none;
     border-bottom: none;
