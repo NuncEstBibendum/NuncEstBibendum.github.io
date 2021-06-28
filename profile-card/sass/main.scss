@@ -1,0 +1,121 @@
+/* Tabula rasa */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+$dark-gray : hsl(0, 0%, 59%);
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$card-background: #fff;
+
+
+body {
+    background-image: url("/images/bg-pattern-card.svg");
+    background-size: 800%;
+    overflow: hidden;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    margin-top:150px;
+    .card {
+        margin: auto;
+        width: 315px;
+        height: 50vh;
+        background-color: $card-background;
+        flex-direction: column;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 0 20px 10px rgba(0,0,0,0.2);
+        transition: transform ease 400ms;
+        &__img img {
+            border-radius: 50%;
+            border: solid white 5px;
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        &__header {
+            background-image: url("/images/bg-pattern-card.svg");
+            height: 33%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        &__body {
+            height: 42%;
+            .card__title {
+                text-align: center;
+            }
+            .card__subtitle {
+                text-align: center;
+                font-size: 16px;
+                color: $dark-gray;
+                font-weight: 400;
+                margin-top: 1rem;
+            }
+            &--center {
+                position: absolute;
+                margin: 60px auto 0 auto;
+                left: 0;
+                right: 0;
+            }
+            .card__title--age {
+                color: $dark-gray;
+                font-size: 16px;
+                font-weight: 400;
+                margin-left: 0.5rem;
+            }
+        }
+        &__footer {
+            border-top: 1px solid #eee;
+        }
+        &__list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 25px;
+            &__item {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+li {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 {
+    font-size: 18px;
+    color: $very-dark-desaturated-blue;
+    text-transform: initial;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: 400;
+    color: $dark-gray;
+    text-transform: initial;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}

@@ -1,0 +1,149 @@
+/* Tabula rasa */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-image: url("/images/bg-pattern-card.svg");
+  background-size: 800%;
+  overflow: hidden;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 150px;
+}
+
+.container .card {
+  margin: auto;
+  width: 315px;
+  height: 50vh;
+  background-color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  -webkit-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform ease 400ms;
+  transition: -webkit-transform ease 400ms;
+  transition: transform ease 400ms;
+  transition: transform ease 400ms, -webkit-transform ease 400ms;
+}
+
+.container .card__img img {
+  border-radius: 50%;
+  border: solid white 5px;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+.container .card__header {
+  background-image: url("/images/bg-pattern-card.svg");
+  height: 33%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.container .card__body {
+  height: 42%;
+}
+
+.container .card__body .card__title {
+  text-align: center;
+}
+
+.container .card__body .card__subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #969696;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.container .card__body--center {
+  position: absolute;
+  margin: 60px auto 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.container .card__body .card__title--age {
+  color: #969696;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.container .card__footer {
+  border-top: 1px solid #eee;
+}
+
+.container .card__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 25px;
+}
+
+.container .card__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.container .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+li {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+  color: #2d3248;
+  text-transform: initial;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #969696;
+  text-transform: initial;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
