@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("/images/bg-pattern-card.svg");
+  background-image: url("../../images/bg-pattern-card.svg");
   background-size: 800%;
   overflow: hidden;
   font-family: "Kumbh Sans", sans-serif;
@@ -24,6 +24,7 @@ body {
   margin: auto;
   width: 315px;
   height: 50vh;
+  max-height: 350px;
   background-color: #fff;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -50,7 +51,7 @@ body {
 }
 
 .container .card__header {
-  background-image: url("/images/bg-pattern-card.svg");
+  background-image: url("../../images/bg-pattern-card.svg");
   height: 33%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
