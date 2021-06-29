@@ -1,0 +1,171 @@
+/*---------- VARIABLES AND MIXINS ----------*/
+
+$background-color-top: hsl(273, 75%, 66%);
+$background-color-bottom: hsl(240, 73%, 65%);
+
+$text-color-primary: hsl(238, 29%, 16%);
+$text-color-secondary: hsl(14, 88%, 65%);
+$text-color-tertiary: hsl(237, 12%, 33%);
+$text-color-muted: hsl(240, 6%, 50%);
+
+$divider-color: hsl(240, 5%, 91%);
+
+@mixin mobile-only () {
+    @media screen and (max-width:950px) {
+        @content;
+    }
+}
+
+@mixin tablet-only () {
+    @media screen and (max-width:1100px) {
+        @content;
+    }
+}
+
+/*---------- GENERAL ----------*/
+
+* {
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: 'Kumbh', sans-serif;
+}
+
+body {
+    background: linear-gradient($background-color-top, $background-color-bottom);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+/*---------- MAIN ----------*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    width: 60%;
+    height: auto;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0px 20px 20px 5px rgba(0,0,0,0.2);
+    @include tablet-only() {
+        width: 70%;
+    }
+    @include mobile-only() {
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+.left-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    @include mobile-only() {
+        width: 100%;
+        height: 50px;
+    }
+    #img-woman {
+        position: absolute;
+        left: -150px;
+        width: 472px;
+        height: 359px;
+        background-image: url("../../images/illustration-woman-online-desktop.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: drop-shadow(0px 50px 0px rgba(0,0,0,0.2));
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: transform 1s ease-in-out, opacity 0.6s ease-in-out;
+        @include mobile-only() {
+            background-image: url("../../images/illustration-woman-online-mobile.svg");
+            margin-left: auto;
+            margin-right: auto;
+            left: -1em;
+            right: 0;
+            top: -10em;
+            text-align: center;
+            width: 100%;
+            height: 196px;
+        }
+    }
+    #img-box {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 200px;
+            left: -150px;
+            width: 184px;
+            height: 191px;
+            transform: translateY(-75px);
+            opacity: 0;
+            background-image: url("../../images/illustration-box-desktop.svg");
+            background-repeat: no-repeat;
+            background-position: center;    
+            transition: transform 1s ease-in-out, opacity 0.6s ease-in-out;
+            @include mobile-only() {
+                display: none;
+            }
+    }
+}
+
+.right-column {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile-only() {
+        width: 100%;
+    }
+    .question-list {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+    }
+    h1 {
+        font-size: 2em;
+        color: $text-color-primary;
+        margin-bottom: 2em;
+    }
+    .question__title {
+        font-size: 1em;
+        color: $text-color-tertiary;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5em;
+        cursor: pointer;
+        transition: font-size 0.2s ease;
+        font-weight: 400;
+    }
+    .question__content {
+        color: $text-color-muted;
+        margin-bottom: 2em;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease;
+        transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+    .icon-arrow {
+        width: 1.1em;
+        height: 1.1em;
+        background: url("../../images/icon-arrow-down.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120%;
+        cursor: pointer;
+    }
+}
