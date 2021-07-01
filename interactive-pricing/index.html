@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./public/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  
+  <title>Interactive pricing component</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="main-header">
+        <h1 class="main-header__title">Simple, traffic-based pricing</h1>
+        <h2 class="main-header__subtitle">Sign-up for our 30-day trial. No credit card required.</h2>
+      </div>
+      <div class="main-body">
+        <div class="main-body__title">
+          <h3 id="pageviews-h3"><span class="main-body__title--pageviews">100K</span> Pageviews</h3>
+          <div class="price-container">
+            <h3><span class="main-body__title--price">$16.00</span></h3>
+            <h3> /month</h3>
+          </div>
+        </div>
+        <div class="main-body__slider-container">
+          <input type="range" min="0" max="4" step="1" value = "2" class="main-body__slider-container--slider" id="price-slider">
+        </div>
+        <div class="main-body__billing">
+          <p>Monthly billing</p>
+          <label class="main-body__switch">
+            <input type="checkbox" id='billing-checkbox'>
+            <span class="main-body__switch--slider main-body__switch--round"></span>
+          </label>
+          <p>Yearly billing</p>
+          <p class="discount">25%<span id="display-discount"> discount</span></p>
+        </div>
+        <div class="divider"></div>
+        <div class="main-body__footer">
+          <ul>
+            <li><span class="icon"></span> Unlimited websites</li>
+            <li><span class="icon"></span>100% data ownership</li>
+            <li><span class="icon"></span>Email reports</li>
+          </ul>
+          <button>Start my trial</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="./js/script.js"></script>
+</html>

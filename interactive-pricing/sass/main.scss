@@ -1,0 +1,346 @@
+/*---------- VARIABLES AND MIXINS ----------*/
+
+/* PRIMARY COLORS */
+$slider-bar: hsl(174, 77%, 80%);
+$slider-background: hsl(174, 86%, 45%);
+$discount-background: hsl(14, 92%, 95%);
+$discount-text: hsl(15, 100%, 70%);
+$cta-text: hsl(226, 100%, 87%);
+
+/* SECONDARY COLORS */
+$pricing-background: hsl (0, 0%, 100%);
+$main-background: hsl(230, 100%, 99%);
+$empty-slider-bar: hsl(224, 65%, 95%);
+$toggle-background: hsl(223, 50%, 87%);
+$text-secondary: hsl(225, 20%, 60%);
+$cta-background: hsl(227, 35%, 25%);
+
+@mixin tablet-only() {
+    @media screen and (max-width:900px) {
+        @content;
+    }
+}
+
+@mixin mobile-only() {
+    @media screen and (max-width:750px) {
+        @content;
+    }
+}
+
+/*---------- GENERAL ----------*/
+
+* {
+    margin:0;
+    padding:0;
+    list-style: none;
+    border-style: none;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: url(../../images/bg-pattern.svg) no-repeat;
+    background-color: $main-background;
+    background-size: cover;
+    background-position-y: -250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 740px;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet-only() {
+        width: 600px;
+    }
+    @include mobile-only() {
+        width: 90%;
+        padding: 0;
+    }
+}
+
+.main-header {
+    width: 100%;
+    height: 145px;
+    padding: 0 10%;
+    background: url(../../images/pattern-circles.svg) no-repeat center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 70px;
+    margin-top: 50px;
+    @include mobile-only() {
+        margin-bottom: 30px;
+    }
+    h1 {
+        color: $cta-background;
+        text-align: center;
+        @include mobile-only() {
+            font-size: 1.5em;
+        }
+    }
+    h2 {
+        font-size: 1em;
+        color: $text-secondary;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+.main-body {
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8% 8% 5% 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    @include mobile-only() {
+        position: relative;
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include mobile-only() {
+            flex-direction: column;
+            align-items: center;
+        }
+        h3 {
+            font-size: 1em;
+            color: $text-secondary;
+            margin-bottom: 4em;
+            align-self: center;
+        }
+        #pageviews-h3 {
+            @include mobile-only() {
+                margin-bottom: 8em;
+            }
+        }
+        &--price {
+            font-size: 3em;
+            align-self: center;
+            color: $cta-background;
+        }
+        .price-container {
+            display: flex;
+
+        }
+    }
+    /* Design of the slider : https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider */
+    &__slider-container {
+        align-self: center;
+        width: 100%;
+        @include mobile-only() {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            top: 20%;
+            width: 300px;
+        }
+        &--slider {
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 15px; /* Specified height */
+            background: #d3d3d3; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+            border-radius: 20px;
+            margin-bottom: 4em;
+            &:hover {
+                opacity: 1;
+            }
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                width: 40px; /* Set a specific slider handle width */
+                height: 40px; /* Slider handle height */
+                background: #04AA6D; /* Green background */
+                cursor: pointer; /* Cursor on hover */
+                border-radius: 50%;
+                background: url(../../images/icon-slider.svg) no-repeat center;
+                background-color: $slider-background;
+                box-shadow: 0px 10px 10px $slider-bar;
+            }
+            &::-moz-range-thumb {
+                width: 40px; /* Set a specific slider handle width */
+                height: 40px; /* Slider handle height */
+                background: #04AA6D; /* Green background */
+                cursor: pointer; /* Cursor on hover */
+                border-radius: 50%;
+                background: url(../../images/icon-slider.svg) no-repeat center;
+                background-color: $slider-background;
+            }
+            &::-moz-range-progress {
+                background-color: $slider-bar;
+                height: 15px;
+                border-radius: 20px;
+            }
+            &::-moz-range-track {
+                background-color: $empty-slider-bar;
+                height: 15px;
+                border-radius: 20px;
+            }
+            &::-ms-fill-lower {
+                background-color: $slider-bar;
+                height: 15px;
+                border-radius: 20px;
+            }
+            &::-ms-fill-upper {  
+                background-color: $empty-slider-bar;
+                height: 15px;
+                border-radius: 20px;
+            }
+            
+        }
+    }
+    &__billing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2em;
+        position: relative;
+        color: $text-secondary;
+        @include mobile-only() {
+            font-size: 0.8em;
+        }
+        .discount {
+            position: absolute;
+            right: -20px;
+            font-size: 0.8em;
+            background-color: $discount-background;
+            color: $discount-text;
+            padding: 3px 5px;
+            border-radius: 20px;
+            #display-discount {
+                @include mobile-only() {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: $text-secondary;
+        @include mobile-only() {
+            flex-direction: column;
+        }
+        ul {
+            text-align: left;
+            @include mobile-only() {
+                text-align: center;
+            }
+        }
+        li {
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+                @include mobile-only() {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+        span.icon {
+            width: 9px;
+            height: 8px;
+            display: inline-block;
+            margin-right: 20px;
+            background: url(../../images/icon-check.svg);
+        }
+        button {
+            background-color: $cta-background;
+            color: $cta-text;
+            border-radius: 30px;
+            padding: 1em 3em;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            &:hover {
+                background-color: darken($cta-background,10%);
+            }
+        }
+    }
+    .divider {
+        width: 120%;
+        height: 1px;
+        background-color: $toggle-background;
+        align-self: center;
+        margin-bottom: 2em;
+    }
+
+}
+
+/* Start of the rounded switch */
+.main-body__switch {
+    margin: 0 15px;
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 25px;
+    @include mobile-only() {
+        margin: 0 5px;
+    }
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    &--slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+}
+
+input:checked + .main-body__switch--slider {
+    background-color: #2196F3;
+    &::before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+}
+
+input:focus + .main-body__switch--slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.main-body__switch--slider.main-body__switch--round {
+    border-radius: 34px;
+    &::before {
+        border-radius: 50%;
+    }
+}
+/* End of the rounded switch */

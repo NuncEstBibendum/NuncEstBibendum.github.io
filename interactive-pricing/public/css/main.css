@@ -1,0 +1,477 @@
+/*---------- VARIABLES AND MIXINS ----------*/
+/* PRIMARY COLORS */
+/* SECONDARY COLORS */
+/*---------- GENERAL ----------*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-style: none;
+  font-family: 'Manrope', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: url(../../images/bg-pattern.svg) no-repeat;
+  background-color: #fafbff;
+  background-size: cover;
+  background-position-y: -250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  width: 740px;
+  padding: 0 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main {
+    width: 90%;
+    padding: 0;
+  }
+}
+
+.main-header {
+  width: 100%;
+  height: 145px;
+  padding: 0 10%;
+  background: url(../../images/pattern-circles.svg) no-repeat center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 750px) {
+  .main-header {
+    margin-bottom: 30px;
+  }
+}
+
+.main-header h1 {
+  color: #293356;
+  text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .main-header h1 {
+    font-size: 1.5em;
+  }
+}
+
+.main-header h2 {
+  font-size: 1em;
+  color: #858fad;
+  text-align: center;
+  font-weight: 600;
+}
+
+.main-body {
+  width: 80%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 8% 8% 5% 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  /* Design of the slider : https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider */
+}
+
+@media screen and (max-width: 750px) {
+  .main-body {
+    position: relative;
+  }
+}
+
+.main-body__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.main-body__title h3 {
+  font-size: 1em;
+  color: #858fad;
+  margin-bottom: 4em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__title #pageviews-h3 {
+    margin-bottom: 8em;
+  }
+}
+
+.main-body__title--price {
+  font-size: 3em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #293356;
+}
+
+.main-body__title .price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-body__slider-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__slider-container {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 20%;
+    width: 300px;
+  }
+}
+
+.main-body__slider-container--slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 15px;
+  /* Specified height */
+  background: #d3d3d3;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  border-radius: 20px;
+  margin-bottom: 4em;
+}
+
+.main-body__slider-container--slider:hover {
+  opacity: 1;
+}
+
+.main-body__slider-container--slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 40px;
+  /* Set a specific slider handle width */
+  height: 40px;
+  /* Slider handle height */
+  background: #04AA6D;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 50%;
+  background: url(../../images/icon-slider.svg) no-repeat center;
+  background-color: #10d5c2;
+  -webkit-box-shadow: 0px 10px 10px #a5f3eb;
+          box-shadow: 0px 10px 10px #a5f3eb;
+}
+
+.main-body__slider-container--slider::-moz-range-thumb {
+  width: 40px;
+  /* Set a specific slider handle width */
+  height: 40px;
+  /* Slider handle height */
+  background: #04AA6D;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 50%;
+  background: url(../../images/icon-slider.svg) no-repeat center;
+  background-color: #10d5c2;
+}
+
+.main-body__slider-container--slider::-moz-range-progress {
+  background-color: #a5f3eb;
+  height: 15px;
+  border-radius: 20px;
+}
+
+.main-body__slider-container--slider::-moz-range-track {
+  background-color: #eaeefb;
+  height: 15px;
+  border-radius: 20px;
+}
+
+.main-body__slider-container--slider::-ms-fill-lower {
+  background-color: #a5f3eb;
+  height: 15px;
+  border-radius: 20px;
+}
+
+.main-body__slider-container--slider::-ms-fill-upper {
+  background-color: #eaeefb;
+  height: 15px;
+  border-radius: 20px;
+}
+
+.main-body__billing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2em;
+  position: relative;
+  color: #858fad;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__billing {
+    font-size: 0.8em;
+  }
+}
+
+.main-body__billing .discount {
+  position: absolute;
+  right: -20px;
+  font-size: 0.8em;
+  background-color: #feece7;
+  color: #ff8c66;
+  padding: 3px 5px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__billing .discount #display-discount {
+    display: none;
+  }
+}
+
+.main-body__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #858fad;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.main-body__footer ul {
+  text-align: left;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__footer ul {
+    text-align: center;
+  }
+}
+
+.main-body__footer li {
+  margin-bottom: 1em;
+}
+
+.main-body__footer li:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__footer li:last-child {
+    margin-bottom: 2em;
+  }
+}
+
+.main-body__footer span.icon {
+  width: 9px;
+  height: 8px;
+  display: inline-block;
+  margin-right: 20px;
+  background: url(../../images/icon-check.svg);
+}
+
+.main-body__footer button {
+  background-color: #293356;
+  color: #bdccff;
+  border-radius: 30px;
+  padding: 1em 3em;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.main-body__footer button:hover {
+  background-color: #191f34;
+}
+
+.main-body .divider {
+  width: 120%;
+  height: 1px;
+  background-color: #cdd7ee;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 2em;
+}
+
+/* Start of the rounded switch */
+.main-body__switch {
+  margin: 0 15px;
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 25px;
+}
+
+@media screen and (max-width: 750px) {
+  .main-body__switch {
+    margin: 0 5px;
+  }
+}
+
+.main-body__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.main-body__switch--slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.main-body__switch--slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .main-body__switch--slider {
+  background-color: #2196F3;
+}
+
+input:checked + .main-body__switch--slider::before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+input:focus + .main-body__switch--slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+.main-body__switch--slider.main-body__switch--round {
+  border-radius: 34px;
+}
+
+.main-body__switch--slider.main-body__switch--round::before {
+  border-radius: 50%;
+}
+
+/* End of the rounded switch */
+/*# sourceMappingURL=main.css.map */
